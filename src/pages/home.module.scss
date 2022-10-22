@@ -10,11 +10,28 @@
 
 .post {
   margin-top: 2rem;
+
+  > a {
+    display: block;
+
+    & + a {
+      margin-top: 3rem;
+    }
+  }
+
+  button {
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--highlight);
+    margin-top: 4rem;
+  }
 }
 
 .posts {
   max-width: 720px;
-  margin: 5rem auto 0;
+  margin-top: 5rem;
 
   strong {
     font-size: 1.75rem;

@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { useState } from 'react';
 import { FiCalendar, FiUser } from 'react-icons/fi';
 import Header from '../components/Header';
 
@@ -41,11 +42,39 @@ export default function Home({ postsPagination }: HomeProps) {
     ),
   }));
 
+  const [posts, setPosts] = useState<Post[]>(formattedPosts);
+  const [nextPage, setNextPage] = useState(postsPagination.next_page);
+
+  async function handleNextPage(): Promise<void> {
+    if (nextPage === null) {
+      return;
+    }
+
+    const postResults = await fetch(nextPage).then(response => response.json());
+
+    setNextPage(postResults.next_page);
+
+    const newPosts = postResults.results.map((post: Post) => {
+      return {
+        ...post,
+        first_publication_date: format(
+          new Date(post.first_publication_date),
+          'dd MMM yyyy',
+          {
+            locale: ptBR,
+          }
+        ),
+      };
+    });
+
+    setPosts([...posts, ...newPosts]);
+  }
+
   return (
     <main className={commonStyles.container}>
       <Header />
       <div className={styles.post}>
-        {formattedPosts.map(post => (
+        {posts.map(post => (
           <Link href={`/post/${post.uid}`} key={post.uid}>
             <a className={styles.posts}>
               <strong>{post.data.title}</strong>
@@ -63,6 +92,12 @@ export default function Home({ postsPagination }: HomeProps) {
             </a>
           </Link>
         ))}
+
+        {nextPage && (
+          <button type="button" onClick={handleNextPage}>
+            Carregar mais posts
+          </button>
+        )}
       </div>
     </main>
   );

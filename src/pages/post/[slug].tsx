@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { FiCalendar, FiClock, FiUser } from 'react-icons/fi';
@@ -36,6 +38,14 @@ export default function Post({ post }: PostProps) {
     return <h1>Carregando...</h1>;
   }
 
+  const formattedDate = format(
+    new Date(post.first_publication_date),
+    'dd MMM yyyy',
+    {
+      locale: ptBR,
+    }
+  );
+
   return (
     <>
       <Header />
@@ -47,7 +57,7 @@ export default function Post({ post }: PostProps) {
             <ul>
               <li>
                 <FiCalendar />
-                {post.first_publication_date}
+                {formattedDate}
               </li>
               <li>
                 <FiUser />

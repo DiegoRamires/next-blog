@@ -1,5 +1,5 @@
 {
-  "apiEndpoint": "https://desafiosapcetraveling.prismic.io/api/v2",
+  "apiEndpoint": "https://blog-diario-nath.prismic.io/api/v2",
   "libraries": [
     "@/slices"
   ],

@@ -12,7 +12,7 @@ interface PostsDocumentData {
      * title field in *Posts*
      *
      * - **Field Type**: Text
-     * - **Placeholder**: *None*
+     * - **Placeholder**: Título do Post
      * - **API ID Path**: posts.title
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
@@ -23,7 +23,7 @@ interface PostsDocumentData {
      * subtitle field in *Posts*
      *
      * - **Field Type**: Text
-     * - **Placeholder**: *None*
+     * - **Placeholder**: Sub título
      * - **API ID Path**: posts.subtitle
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
@@ -34,7 +34,7 @@ interface PostsDocumentData {
      * author field in *Posts*
      *
      * - **Field Type**: Text
-     * - **Placeholder**: *None*
+     * - **Placeholder**: Autor
      * - **API ID Path**: posts.author
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
@@ -73,7 +73,7 @@ export interface PostsDocumentDataContentItem {
      * heading field in *Posts → content*
      *
      * - **Field Type**: Text
-     * - **Placeholder**: *None*
+     * - **Placeholder**: Título da Seção
      * - **API ID Path**: posts.content[].heading
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
@@ -83,7 +83,7 @@ export interface PostsDocumentDataContentItem {
      * body field in *Posts → content*
      *
      * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
+     * - **Placeholder**: Conteúdo
      * - **API ID Path**: posts.content[].body
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *

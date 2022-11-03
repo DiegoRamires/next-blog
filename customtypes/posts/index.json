@@ -16,21 +16,21 @@
         "type": "Text",
         "config": {
           "label": "title",
-          "placeholder": ""
+          "placeholder": "Título do Post"
         }
       },
       "subtitle": {
         "type": "Text",
         "config": {
           "label": "subtitle",
-          "placeholder": ""
+          "placeholder": "Sub título"
         }
       },
       "author": {
         "type": "Text",
         "config": {
           "label": "author",
-          "placeholder": ""
+          "placeholder": "Autor"
         }
       },
       "banner": {
@@ -50,14 +50,14 @@
               "type": "Text",
               "config": {
                 "label": "heading",
-                "placeholder": ""
+                "placeholder": "Título da Seção"
               }
             },
             "body": {
               "type": "StructuredText",
               "config": {
                 "label": "body",
-                "placeholder": "",
+                "placeholder": "Conteúdo",
                 "allowTargetBlank": true,
                 "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
               }
